@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int timerValue = 0;
-    private Handler mHandler = new Handler();
+    private Handler stopWatchHandler = new Handler();
 
     private TextView timerTextView;
     private Button toggleButton;
@@ -49,38 +49,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void toggleStopwatch(View view) {
         String currentState = toggleButton.getText().toString();
-        Log.i("MainActivity", currentState);
         if (currentState.equals("stop")) {
-            stopStopWatch();
+            stopWatchHandler.removeCallbacks(stopWatchRunnable);
             toggleButton.setText("start");
 
         } else if (currentState.equals("start")) {
-            startStopWatch();
+            stopWatchRunnable.run();
             toggleButton.setText("stop");
         }
-    }
-
-    public void startStopWatch() {
-        mToastRunnable.run();
-    }
-
-    public void stopStopWatch() {
-        mHandler.removeCallbacks(mToastRunnable);
     }
 
     public void resetStopWatch(View view) {
         timerValue = 0;
         timerTextView.setText(Integer.toString(timerValue));
-        mHandler.removeCallbacks(mToastRunnable);
+        stopWatchHandler.removeCallbacks(stopWatchRunnable);
         toggleButton.setText("start");
     }
 
-    private Runnable mToastRunnable = new Runnable() {
+    private Runnable stopWatchRunnable = new Runnable() {
         @Override
         public void run() {
             timerValue += 1;
             timerTextView.setText(Integer.toString(timerValue));
-            mHandler.postDelayed(this, 1000);
+            stopWatchHandler.postDelayed(this, 1000);
         }
     };
 
