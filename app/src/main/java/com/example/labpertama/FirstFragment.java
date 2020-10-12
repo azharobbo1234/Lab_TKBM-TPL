@@ -12,11 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class FirstFragment extends Fragment {
-    private Button firstButton;
-    private Button secondButton;
-    private Button thirdButton;
+    private Button firstButton, secondButton, thirdButton;
+    private TextView firstTextView, secondTextView, thirdTextView;
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
     private Fragment secondFragment;
@@ -33,8 +33,15 @@ public class FirstFragment extends Fragment {
         firstButton = (Button) view.findViewById(R.id.firstItemButton);
         secondButton = (Button) view.findViewById(R.id.secondItemButton);
         thirdButton = (Button) view.findViewById(R.id.thirdItemButton);
+        firstTextView = (TextView) view.findViewById(R.id.firstItemTextView);
+        secondTextView = (TextView) view.findViewById(R.id.secondItemTextView);
+        thirdTextView = (TextView) view.findViewById(R.id.thirdItemTextView);
         secondFragment = new SecondFragment();
         mainActivityViewModel = new ViewModelProvider(getActivity()).get(MainActivityViewModel.class);
+
+        firstTextView.setText(mainActivityViewModel.getConsoleName(0));
+        secondTextView.setText(mainActivityViewModel.getConsoleName(1));
+        thirdTextView.setText(mainActivityViewModel.getConsoleName(2));
 
         firstButton.setOnClickListener(new View.OnClickListener() {
             @Override

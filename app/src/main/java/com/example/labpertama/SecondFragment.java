@@ -12,11 +12,6 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SecondFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SecondFragment extends Fragment {
     private TextView nameTextView;
     private TextView descriptionTextView;
@@ -41,9 +36,9 @@ public class SecondFragment extends Fragment {
         mainActivityViewModel = new ViewModelProvider(getActivity()).get(MainActivityViewModel.class);
         console = mainActivityViewModel.getSelectedConsole();
 
-        nameTextView.setText(console.getName());
-        descriptionTextView.setText(console.getDescription());
-        priceTextView.setText(console.getPrice());
+        nameTextView.setText("Name: " + console.getName());
+        descriptionTextView.setText("Description: " + console.getDescription());
+        priceTextView.setText("Price: " + console.getPrice());
 
         return view;
     }

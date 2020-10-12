@@ -16,4 +16,7 @@ public class MainActivityViewModel extends ViewModel {
     public void setConsole(int index) {
         this.selectedConsole = index;
     }
+    public String getConsoleName(int index) {
+        return consoleArr[index].getName();
+    }
 }
