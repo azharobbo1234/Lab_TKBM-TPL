@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "172791256413",
+    "firebase_url": "https://lab-kelima.firebaseio.com",
+    "project_id": "lab-kelima",
+    "storage_bucket": "lab-kelima.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172791256413:android:c4b45ec25721eb3e1b04b4",
+        "android_client_info": {
+          "package_name": "com.example.labpertama"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172791256413-8tfl9b3a6ej2k7cnpnkjsul9i19a9gpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbqgmMG7JLDM9b44XGu6_ZHZmcxXTWKUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172791256413-8tfl9b3a6ej2k7cnpnkjsul9i19a9gpp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

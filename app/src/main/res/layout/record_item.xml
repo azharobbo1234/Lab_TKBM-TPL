@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/small_gap"
+    android:paddingBottom="@dimen/small_gap">
+
+    <TextView
+        android:id="@+id/record_text_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="@string/label_date" />
+
+    <TextView
+        android:id="@+id/record_text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/record_text_date_label"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="@string/placeholder_date" />
+
+    <TextView
+        android:id="@+id/record_text_wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/record_text_date"
+        android:text="@string/placeholder_wifi_name" />
+
+</RelativeLayout>
