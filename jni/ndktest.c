@@ -1,6 +1,7 @@
   #include<jni.h>
   #include<string.h>
 
-  jstring Java_com_example_labpertama_MainActivity_helloWorld(JNIEnv* env, jobject obj) {
-    return (*env)->NewStringUTF(env, "This text is written in c");
+  jint Java_com_example_labpertama_MainActivity_addFromJni(JNIEnv* env, jobject obj, jint num1,
+  jint num2) {
+    return num1 + num2;
   }
